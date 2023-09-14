@@ -1,0 +1,13 @@
+@use 'globals';
+
+body {
+  background-color: var(--main-color-1);
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+h1 {
+  color: var(--main-color-2);
+  text-transform: uppercase;
+  padding: 3rem;
+}

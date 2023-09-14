@@ -1,12 +1,10 @@
 {
   "name": "express-sass-starter",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "concurrently \"nodemon --ext *, ./public/stylesheets/*\" \"sass --watch src/scss/main.scss:public/stylesheets/style.css --style compressed\"",
-    "watch": "nodemon --ext *",
-    "sass": "sass --watch src/scss/main.scss:public/stylesheets/style.css --style compressed"
+    "dev": "concurrently \"nodemon --ext *\" \"sass --watch src/scss/main.scss:public/stylesheets/style.css --style compressed\""
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

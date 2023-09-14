@@ -14,7 +14,7 @@
 
 > CMD: git clone & git remote remove orgin & npm install & npm run dev
 
-    git clone https://github.com/tBrause/npm-express-sass-starter.git .; git remote remove origin; npm install; npm run dev
+    git clone https://github.com/tBrause/npm-express-sass-livereload.git .; git remote remove origin; npm install; npm run dev
 
 > _Erfolgreich getestet: _
 

@@ -9,6 +9,13 @@ const connectLivereload = require('connect-livereload');
 
 // Create router
 const indexRouter = require('./routes/index');
+const varsRouter = require('./routes/variables');
+const arraysRouter = require('./routes/arrays');
+const objectsRouter = require('./routes/objects');
+const formsRouter = require('./routes/forms');
+const conditionalsRouter = require('./routes/conditionals');
+const cssRouter = require('./routes/css');
+const tagsRouter = require('./routes/tags');
 
 // livereload
 const liveReloadServer = livereload.createServer();
@@ -24,6 +31,7 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+app.set('port', 8080);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -33,6 +41,13 @@ app.use(connectLivereload());
 
 // Router use
 app.use('/', indexRouter);
+app.use('/variables', varsRouter);
+app.use('/arrays', arraysRouter);
+app.use('/objects', objectsRouter);
+app.use('/forms', formsRouter);
+app.use('/conditionals', conditionalsRouter);
+app.use('/css', cssRouter);
+app.use('/tags', tagsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

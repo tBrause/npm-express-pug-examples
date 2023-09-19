@@ -1,4 +1,5 @@
 module.exports = {
-	singleQuote: true,
-	useTabs: false,
+  singleQuote: true,
+  useTabs: false,
+  printWidth: 80,
 };

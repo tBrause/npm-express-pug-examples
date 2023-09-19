@@ -1,0 +1,64 @@
+extends layout
+
+block content
+  h1= title
+  p By default, text at the start of a line (or after only white space) represents an HTML tag. Indented tags are nested, creating the tree structure of HTML.
+  h2 Example inline tags
+
+  //- This is a paragraph inside a div.
+  //- Pug Code
+  h3 Pug Code
+  pre
+    code
+      | div
+      |    p This is a paragraph inside a div.
+
+  //- HTML output
+  h3 HTML Output
+  pre
+    code &lt;div&gt;&lt;p&gt;This is a paragraph inside a div.&lt;/p&gt&lt;/div&gt;
+  
+  //- Check the source code of the page to see the HTML output
+  div
+    p This is a paragraph inside a div.
+
+  hr
+
+  h2 with Block Expansion
+
+  //- This is a paragraph inside a div.
+  //- Pug Code
+  h3 Pug Code
+  pre
+    code div: p This is a paragraph inside a div.
+
+  //- HTML output
+  h3 HTML Output
+  pre
+    code &lt;div&gt;&lt;p&gt;This is a paragraph inside a div.&lt;/p&gt&lt;/div&gt;
+  
+  //- Check the source code of the page to see the HTML output
+  div: p This is a paragraph inside a div.
+
+  hr
+
+  h2 Example list
+
+  //- Pug Code
+  h3 Pug Code
+  pre
+    code
+      | ul: li one
+      |   li two
+      |   li three
+
+  //- HTML output
+  h3 HTML Output
+  pre
+    code &lt;ul&gt;&lt;li&gt;one&lt;/li&gt;&lt;li&gt;two&lt;/li&gt;&lt;li&gt;three&lt;/li&gt;&lt;/ul&gt;
+
+  //- Check the source code of the page to see the HTML output
+  ul: li one
+   li two
+   li three
+

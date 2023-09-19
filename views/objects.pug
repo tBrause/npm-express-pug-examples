@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1 Examples of using objects with Pug
+
+  h3 Object in JS file
+  pre
+    code const listOjb = [{ name: "a" }, { name: "b" }, { name: "c" }];
+
+  hr
+
+  h3 Each loop in Pug file
+  pre
+    code
+      | ul  
+      |   each item in listOjb
+      |     li \#{item.name}
+
+  hr
+
+  h3 Result
+  pre 
+    code &lt;ul&gt&lt;li&gt;a&lt;/li&gt;&lt;li&gt;b&lt;/li&gt;&lt;li&gt;c&lt;/li&gt;&lt;/ul&gt
+  
+  //- Check the result
+  - const listOjb = [{ name: "a" }, { name: "b" }, { name: "c" }];
+  ul
+    each item in listOjb
+      li #{item.name}

@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1 Examples of using arrays with Pug
+
+  h3 Array IN JS file
+  pre
+    code const listArray = ["a", "b", "c"];
+
+  hr
+
+  h3 Each loop in Pug file
+  pre
+    code
+      | ul  
+      |   each item in listArray
+      |     li \#{item}
+
+  hr
+
+  h3 Result
+  pre 
+    code &lt;ul&gt&lt;li&gt;a&lt;/li&gt;&lt;li&gt;b&lt;/li&gt;&lt;li&gt;c&lt;/li&gt;&lt;/ul&gt
+
+  //- Check the result
+  - const listArray = ["a", "b", "c"];
+  ul
+    each item in listArray
+      li #{item}

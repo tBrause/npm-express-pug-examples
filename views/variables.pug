@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  //- Beispiele zum Verwenden von Variablen
+  h1 Examples of using variables with Pug
+
+  h3 Variable title in JS file
+  pre 
+    code
+      | router.get('/', function (req, res, next) {
+      |   res.render('...', {
+      |     title: 'Express variables',
+      |   });
+      | });
+
+
+  h3 Option 1 in Pug files
+  pre
+    code p= title
+  span Result: 
+  span= title
+
+  hr
+
+  h3 Option 2 in Pug files
+  pre
+    code p \#{title}
+  span Result: 
+  span #{title}
+
+  hr
+  
+  h3 Option 3 in Pug files
+  pre
+    code p Welcome to \#{title} ...
+  span Result: 
+  span Welcome to #{title} ...
+
+  hr
+
+  h3 Variables in Pug files begin with a minus sign
+  pre
+    code - const myVar = 'myVar'
+  pre
+    code - const myArray = ['a', 'b', 'c']
+  pre
+    code - const myObject = [{ name: "a" }, { name: "b" }, { name: "c" }];
+
+

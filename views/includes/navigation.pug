@@ -1,0 +1,6 @@
+- const menuItems = [{name: 'Home', url: '/'}, {name: 'Variablen', url: '/variables'}, {name: 'Arrays', url: '/arrays'}, {name: 'Objects', url: '/objects'}, {name: 'CSS', url: '/css'}, {name: 'Forms', url: '/forms'}, {name: 'Conditionals', url: '/conditionals'}, {name: 'Tags', url: '/tags'}];
+    nav(class='main-nav')
+      ul
+        each element in menuItems
+          li
+            a(href=element.url) #{element.name}

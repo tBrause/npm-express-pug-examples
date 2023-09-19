@@ -1,0 +1,101 @@
+extends layout
+
+block content
+  h1 Examples of using CSS with Pug
+
+  //- CSS class
+  h2 CSS class
+
+  //- Simple CSS class
+  h3 This is a paragraph with a CSS class
+  pre
+    code p(class="myClass") myClass
+
+  p Result:
+  pre
+    code &lt;p class="myClass"&gt;myClass&lt;/p&gt;  
+
+  hr
+
+  //- Multiple CSS classes
+  h3 This is a paragraph with multiple CSS classes
+  h4 as array variable
+  pre
+    code
+      | - const myClasses = ['class1', 'class2', 'class3']
+      | p(class=myClasses.join(' ')) myClasses
+  
+  h4 or simple
+  
+  pre
+    code p(class="class1 class2 class3") myClasses
+
+  p Result:
+  pre
+    code &lt;p class="class1 class2 class1"&gt;myClasses&lt;/p&gt;
+  
+  hr
+
+  //- CSS style
+  h2 CSS style
+
+  h3 This is a paragraph with a CSS style attribute
+
+  pre
+    code p(style="color: red;") red text
+  p Result:
+  pre
+    code &lt;p style="color: red;"&gt;red text&lt;/p&gt;
+  hr
+
+  //- Multiple CSS style attributes
+  h3 This is a paragraph with multiple CSS style attributes
+  h4 as array variable
+  pre
+    code
+      | - const myStyles = ['color: red;', 'font-size: 20px;']
+      | p(style=myStyles.join(' ')) myStyles
+  
+  h4 as object variable
+
+  pre
+    code
+      | - const myStyles = {'color': 'red', 'font-size: 20px;'}
+      | p(style=myStyles) myStyles
+  
+  h4 or simple
+  pre 
+    code p(style="color: red; font-size: 20px;") myStyles
+
+  p Result:
+  pre 
+    code &lt;p style="color: red; font-size: 20px;"&gt;myStyles&lt;/p&gt;
+
+  hr
+
+  //- CSS id
+  h2 CSS id
+  h3 This is a paragraph with a CSS id
+  pre
+    code p(id="myId") myId
+  p Result:
+  pre
+    code &lt;p id="myId"&gt;myId&lt;/p&gt;
+
+  hr
+
+  //- CSS multiple attributes
+  h2 CSS multiple attributes
+  h3 This is a paragraph with multiple CSS attributes
+  pre
+    code p(id="myId" class="myClass" style="color: red;") myAttributes
+  
+  h4 or as object variable 
+  pre
+    code
+      | - const myAttributes = {id: 'myId' class: 'myClass', style: 'color: red;'}
+      | p(myAttributes) myAttributes
+  
+  p Result:
+  pre
+    code &lt;p id="myId" class="myClass" style="color: red;"&gt;myAttributes&lt;/p&gt;

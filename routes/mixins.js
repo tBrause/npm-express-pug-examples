@@ -4,10 +4,10 @@ const express = require('express');
 // Create router
 const router = express.Router();
 
-/* GET home page. */
+/* GET mixins page. */
 router.get('/', function (req, res, next) {
   // Render the index page
-  res.render('conditionals', {
+  res.render('mixins', {
     title: 'Express',
     description: 'Express JS with template engine Pug',
   });

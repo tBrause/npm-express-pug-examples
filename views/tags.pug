@@ -3,7 +3,9 @@ extends layout
 block content
   h1= title
   p By default, text at the start of a line (or after only white space) represents an HTML tag. Indented tags are nested, creating the tree structure of HTML.
-  h2 Example inline tags
+  
+  
+  h2 Example nested
 
   //- This is a paragraph inside a div.
   //- Pug Code
@@ -24,11 +26,9 @@ block content
 
   hr
 
-  h2 with Block Expansion
-
   //- This is a paragraph inside a div.
   //- Pug Code
-  h3 Pug Code
+  h3 Pug Code with Block Expansion
   pre
     code div: p This is a paragraph inside a div.
 
@@ -55,10 +55,52 @@ block content
   //- HTML output
   h3 HTML Output
   pre
-    code &lt;ul&gt;&lt;li&gt;one&lt;/li&gt;&lt;li&gt;two&lt;/li&gt;&lt;li&gt;three&lt;/li&gt;&lt;/ul&gt;
+    code
+      | &lt;ul&gt;
+      |   &lt;li&gt;one&lt;/li&gt;
+      |   &lt;li&gt;two&lt;/li&gt;
+      |   &lt;li&gt;three&lt;/li&gt;
+      | &lt;/ul&gt;
 
   //- Check the source code of the page to see the HTML output
   ul: li one
    li two
    li three
+  
+  hr
 
+  h2 Example link
+  //- Links with multiple attributes
+
+  //- Pug Code
+  h3 Pug Code
+  pre
+    code
+      | span.
+      |   Link: \#[a(href='http://example.com' target='_blank') click here] ...
+  
+  //- HTML output
+  h3 HTML Output
+  pre
+    code &lt;span&gt;Link: &lt;a href="http://example.com" target="_blank"&gt;click here&lt;/a&gt; ...&lt;/span&gt;
+  
+  //- Check the source code of the page to see the HTML output
+  span.
+    Link: #[a(href='http://example.com' target='_blank') click here] ...
+
+  hr
+
+  //- Example image
+  h2 Example image
+  //- Pug Code
+  h3 Pug Code
+  pre
+    code
+      | img(src='/favicon.svg', alt='Image', height='200', width='200', style='width: 200px;')
+  //- HTML output
+  h3 HTML Output
+  pre
+    code &lt;img src="/favicon.svg" alt="Image" height="200" width="200" style="width: 200px;"&gt;
+  
+  //- Check the source code of the page to see the HTML output
+  img(src='/favicon.svg', alt='Image', width='200',height='200', style='width: 200px;')

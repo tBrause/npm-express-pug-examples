@@ -6,9 +6,9 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  // Render the index page
+  // Render the forms page
   res.render('forms', {
-    title: 'Express Forms',
+    title: 'Example using forms with Pug',
     description: 'Express JS with template engine Pug',
   });
 });

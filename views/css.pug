@@ -99,3 +99,18 @@ block content
   p Result:
   pre
     code &lt;p id="myId" class="myClass" style="color: red;"&gt;myAttributes&lt;/p&gt;
+
+  hr
+
+  //- CSS shorthand
+  h2 CSS shorthand
+  h3 This is a paragraph with CSS shorthand: #ID and .Class
+  //- Pug Code
+  pre
+    code p#myShortyId.myShortyClass Text
+
+  p Result:
+  //- HTML output
+  pre
+    code &lt;p id="myShortyId" class="myShortyClass"&gt;Text&lt;/p&gt;
+  p#myShortyId.myShortyClass Text

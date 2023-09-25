@@ -1,5 +1,72 @@
 extends layout
 
 block content
+
   h1= title
-  h3= description
+
+  h2 Send input data to same page
+
+  //- Check the source code of the page to see the HTML output
+  .check
+    h3 Demo of sending input data to same page
+
+    //- Check the result
+    if name
+      p Hello #{name}!
+    else
+      p What is your name?
+
+    //- Pug form code
+    form(action="/forms", method="post")
+      label(for="name") Name:
+      input(type="text", name="name", placeholder="Enter your name", value=name)
+      input(type="submit", value="Submit")
+  
+  //- JS code from app.js
+  h3 JS code from app.js
+  pre
+    code const formsRouter = require('./routes/forms');
+  pre
+    code app.use('/forms', formsRouter);
+  pre
+    code
+      | app.post('/forms', (req, res) => {
+      |   res.render('forms', {
+      |     title: 'Result of form action',
+      |     name: req.body.name,
+      |   });
+      | });
+
+  //- Pug Code
+  h3 Pug Code
+  pre
+    code
+      | if name
+      |   p Hello \#{name}!
+      | else
+      |   p What is your name?
+  pre
+    code
+      | form(action="/forms", method="post")
+      |   label(for="name") Name:
+      |   input(type="text", name="name", placeholder="Enter your name", value=name)
+      |   input(type="submit", value="Submit")
+
+  //- HTML output
+  h3 HTML Output
+  pre
+    code
+      | &lt;p&gt;Hello #{name}&lt;/p&gt;
+  pre
+    code
+      | &lt;form action="/forms" method="post"&gt;
+      |   &lt;label for="name"&gt;Name:&lt;/label&gt;
+      |   &lt;input type="text" name="name" placeholder="Enter your name" value="#{name}"&gt;
+      |   &lt;input type="submit" value="Submit"&gt;
+      | &lt;/form&gt;
+
+  //- Check the result
+  if name
+    p Hello #{name}!
+  else
+    p What is your name?

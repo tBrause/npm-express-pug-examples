@@ -16,9 +16,9 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.1",
-    "nodemon": "^3.0.1",
-    "sass": "^1.66.1",
     "connect-livereload": "^0.6.1",
-    "livereload": "^0.9.3"
+    "livereload": "^0.9.3",
+    "nodemon": "^3.0.1",
+    "sass": "^1.66.1"
   }
 }

@@ -1,6 +1,19 @@
-- const menuItems = [{name: 'Home', url: '/'}, {name: 'Variablen', url: '/variables'}, {name: 'Arrays', url: '/arrays'}, {name: 'Objects', url: '/objects'}, {name: 'CSS', url: '/css'}, {name: 'Forms', url: '/forms'}, {name: 'Conditionals', url: '/conditionals'}, {name: 'Tags', url: '/tags'}];
-    nav(class='main-nav')
-      ul
-        each element in menuItems
-          li
-            a(href=element.url) #{element.name}
+//- Navigation items
+- const menuItems = [{name: 'Home', url: '/'}, {name: 'Tags', url: '/tags'}, {name: 'Variablen', url: '/variables'}, {name: 'Arrays', url: '/arrays'}, {name: 'Objects', url: '/objects'}, {name: 'CSS', url: '/css'}, {name: 'Forms', url: '/forms'}, {name: 'Mixins', url: '/mixins'}, {name: 'Conditionals', url: '/conditionals'}];
+
+//- Get current page
+- let currentItem = filename.split('\\').pop().split('/').pop().split('.')[0]
+
+//- Set index page to ''
+if currentItem === 'index'
+  - currentItem = ''
+
+//- Navigation output
+nav(class='main-nav')
+  ul
+    each element in menuItems
+      li
+        a(
+          href=element.url
+          class=(element.url === `/${currentItem}` ? 'active-nav-link' : '')
+        )= element.name

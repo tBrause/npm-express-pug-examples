@@ -16,6 +16,9 @@ const formsRouter = require('./routes/forms');
 const conditionalsRouter = require('./routes/conditionals');
 const cssRouter = require('./routes/css');
 const tagsRouter = require('./routes/tags');
+const mixinsRouter = require('./routes/mixins');
+
+const defaultTitle = 'Express';
 
 // livereload
 const liveReloadServer = livereload.createServer();
@@ -48,6 +51,16 @@ app.use('/forms', formsRouter);
 app.use('/conditionals', conditionalsRouter);
 app.use('/css', cssRouter);
 app.use('/tags', tagsRouter);
+app.use('/mixins', mixinsRouter);
+
+// POST
+app.post('/forms', (req, res) => {
+  console.log('Submitted');
+  res.render('forms', {
+    title: 'Result of form action',
+    name: req.body.name,
+  });
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

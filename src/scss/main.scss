@@ -27,6 +27,25 @@ main * {
       height: auto;
     }
   }
+  &.check {
+    background-color: var(--main-color-4);
+    padding: 1rem;
+    & form {
+      margin-bottom: 0.5rem;
+    }
+    & label,
+    input {
+      margin-right: 1rem;
+      font-weight: 700;
+    }
+    & input {
+      margin-bottom: 0rem;
+      padding: 0.5rem 1rem;
+    }
+    & p {
+      font-weight: 700;
+    }
+  }
 }
 
 .main-nav ul {
@@ -40,10 +59,15 @@ main * {
     margin-bottom: 1rem;
 
     & a {
-      background-color: var(--main-color-2);
+      background-color: var(--main-color-3);
       color: var(--main-color-1);
       text-decoration: none;
       padding: 0.5rem 1rem;
+
+      &.active-nav-link {
+        background-color: var(--main-color-2);
+        _color: var(--main-color-2);
+      }
     }
   }
 }

@@ -17,6 +17,9 @@ const conditionalsRouter = require('./routes/conditionals');
 const cssRouter = require('./routes/css');
 const tagsRouter = require('./routes/tags');
 const mixinsRouter = require('./routes/mixins');
+const caseRouter = require('./routes/case');
+const interationRouter = require('./routes/interation');
+const attributesRouter = require('./routes/attributes');
 
 const defaultTitle = 'Express';
 
@@ -34,7 +37,6 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-app.set('port', 8080);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -52,6 +54,9 @@ app.use('/conditionals', conditionalsRouter);
 app.use('/css', cssRouter);
 app.use('/tags', tagsRouter);
 app.use('/mixins', mixinsRouter);
+app.use('/case', caseRouter);
+app.use('/interation', interationRouter);
+app.use('/attributes', attributesRouter);
 
 // POST
 app.post('/forms', (req, res) => {

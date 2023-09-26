@@ -4,11 +4,11 @@ const express = require('express');
 // Create router
 const router = express.Router();
 
-/* GET css page. */
+/* GET interation page. */
 router.get('/', function (req, res, next) {
-  // Render the index page
-  res.render('css', {
-    title: 'Express CSS',
+  // Render the interation page
+  res.render('interation', {
+    title: 'Examples of using Iteration with Pug',
   });
 });
 

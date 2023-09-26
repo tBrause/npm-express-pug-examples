@@ -18,27 +18,66 @@
 
 > \_Erfolgreich getestet: 15.09.2023
 
+## CMD-Befehle
+
+> CMD: git clone & remote remove origin
+
+    git clone https://github.com/tBrause/npm-vite-react-sass.git .; git remote remove origin;
+
+> CMD: npm install
+
+    npm install
+
+> CMD: npm run start
+
+    npm run start
+
+> CMD: npm run dev
+
+    npm run dev
+
 ## Struktur und Dateien
 
 - bin
   - www
 - public
+  - images
+    - pug.svg
   - stylesheets
     - style.css
     - style.css.map
+  - favicon.svg
 - routes
+  - array.js
+  - conditionals.js
+  - css.js
+  - forms.js
   - index.js
+  - mixins.js
+  - objects.js
+  - tags.js
+  - variables.js
 - src
   - scss
-  - globals
-    - \_index.scss
-    - \_reset.scss
-    - \_variables.scss
-  - main.scss
+    - globals
+      - \_index.scss
+      - \_reset.scss
+      - \_variables.scss
+    - main.scss
 - views
+  - includes
+    - navigation.pug
+  - arrays.pug
+  - conditionals.pug
+  - css.pug
   - error.pug
+  - forms.pug
   - index.pug
   - layout.pug
+  - mixins.pug
+  - objects.pug
+  - tags.pug
+  - variables.pug
 - .gitignore
 - app.js
 - package-lock.json
@@ -50,7 +89,7 @@
 
 ### scripts
 
-- dev: nodemon, sass
+- dev: concurrently, nodemon, sass
 - start: node
 
 ### dependencies
@@ -74,3 +113,7 @@
 
 - Prettier
 - ESLint
+
+## Clone from
+
+> [Node-Express-Sass-Starter Entwicklungsumgebung](https://github.com/tBrause/npm-express-sass-livereload)

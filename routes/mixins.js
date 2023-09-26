@@ -8,8 +8,7 @@ const router = express.Router();
 router.get('/', function (req, res, next) {
   // Render the index page
   res.render('mixins', {
-    title: 'Express',
-    description: 'Express JS with template engine Pug',
+    title: 'Examples of using Mixins with Pug',
   });
 });
 

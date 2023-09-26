@@ -2,4 +2,206 @@ extends layout
 
 block content
   h1= title
-  h3= description
+  
+  //- Mixins
+  h2 Mixins
+
+  //- Pug Code
+  h3 Pug Code
+
+  pre
+    code
+      | mixin list
+      |   ul
+      |     li a
+      |     li b
+      |     li c
+      | 
+      | +list
+
+  //- HTML output
+  h3 HTML output
+
+  pre
+    code
+      | &lt;ul&gt;
+      |   &lt;li&gt;a&lt;/li&gt;
+      |   &lt;li&gt;b&lt;/li&gt;
+      |   &lt;li&gt;c&lt;/li&gt;
+      | &lt;/ul&gt;
+
+  //- Check the HTML output in the browser
+  mixin list
+    ul
+      li a
+      li b
+      li c
+  //- Use
+  +list
+
+
+  //- Use with arguments
+  h2 Use mixins with arguments
+
+  //- Pug Code
+  h3 Pug Code
+
+  pre
+    code
+      | mixin pet(name)
+      |   li.pet= name
+      | 
+      | ul
+      |   +pet('cat')
+      |   +pet('dog')
+      |   +pet('pig')
+
+  //- HTML output
+  h3 HTML output
+
+  pre
+    code
+      | &lt;ul&gt;
+      |   &lt;li class="pet"&gt;cat&lt;/li&gt;
+      |   &lt;li class="pet"&gt;dog&lt;/li&gt;
+      |   &lt;li class="pet"&gt;pig&lt;/li&gt;
+      | &lt;/ul&gt;
+
+  //- Check the HTML output in the browser
+  mixin pet(name)
+    li.pet= name
+  ul
+    +pet('cat')
+    +pet('dog')
+    +pet('pig')
+
+  //- Use with arguments and default values
+  h2 Use mixins with arguments and default values
+
+  //- Pug Code
+  h3 Pug Code
+
+  pre
+    code
+      | mixin pet(name='dog')
+      |   li.pet= name
+      | 
+      | ul
+      |   +pet()
+      |   +pet('cat')
+      |   +pet('dog')
+      |   +pet('pig')
+
+  //- HTML output
+  h3 HTML output
+
+  pre
+    code
+      | &lt;ul&gt;
+      |   &lt;li class="pet"&gt;dog&lt;/li&gt;
+      |   &lt;li class="pet"&gt;cat&lt;/li&gt;
+      |   &lt;li class="pet"&gt;dog&lt;/li&gt;
+      |   &lt;li class="pet"&gt;pig&lt;/li&gt;
+      | &lt;/ul&gt;
+
+  mixin pet(name='dog')
+    li.pet= name
+  ul  
+    +pet()
+    +pet('cat')
+    +pet('dog')
+    +pet('pig')
+
+  //- Use with attrributes
+  h2 Use mixins with attributes
+
+  //- Pug Code
+  h3 Pug Code
+
+  pre
+    code
+      | mixin link(href, name)
+      |   a(class!=attributes.class href=href)= name
+      |
+      | +link('/', 'Home')(class="btn")
+
+  //- HTML output
+  h3 HTML output
+
+  pre
+    code
+      | &lt;a class="btn" href="/"&gt;Home&lt;/a&gt;
+
+  //- Check the HTML output in the browser
+  mixin link(href, name)
+    a(class!=attributes.class href=href)= name
+
+  +link('/', 'Home')(class="btn")
+
+
+  //- Use mixins with blocks and conditionals
+  h2 Use mixins with blocks and conditionals
+
+  //- Pug Code
+  h3 Pug Code
+
+  pre
+    code
+      | mixin article(title)
+      |   .article
+      |   .article-wrapper
+      |     h1= title
+      |     if block
+      |       block
+      |     else
+      |       p
+      |         em No content provided
+      | 
+      | +article('Hello world')
+      | hr
+      | +article('Hello world')
+      |   p
+      |     em with content
+
+
+  //- HTML output
+  h3 HTML output
+
+  pre
+    code
+      | &lt;div class="article"&gt;
+      |   &lt;div class="article-wrapper"&gt;
+      |     &lt;h1&gt;Hello world&lt;/h1&gt;
+      |     &lt;p&gt;
+      |       &lt;em&gt;No content provided&lt;/em&gt;
+      |     &lt;/p&gt;
+      |   &lt;/div&gt;
+      | &lt;/div&gt;
+      | &lt;hr&gt;
+      | &lt;div class="article"&gt;
+      |   &lt;div class="article-wrapper"&gt;
+      |     &lt;h1&gt;Hello world&lt;/h1&gt;
+      |     &lt;p&gt;
+      |       &lt;em&gt;with content&lt;/em&gt;
+      |     &lt;/p&gt;
+      |   &lt;/div&gt;
+      | &lt;/div&gt;	
+
+  //- Check the HTML output in the browser
+  mixin article(title)
+    .article
+    .article-wrapper
+      h2= title
+      if block
+        block
+      else
+        p
+          em No content provided
+
+  +article('Hello world')
+  hr
+  +article('Hello world')
+    p
+      em with content
+
+

@@ -1,4 +1,4 @@
-### Node-Express-Sass-Starter Entwicklungsumgebung
+### Node-Express-Sass-Pug Entwicklungsumgebung
 
 ### `node` `express` `sass` `pug` `concurrently` `nodemon` `livereload` `prettier`
 
@@ -14,7 +14,7 @@
 
 > CMD: git clone & git remote remove orgin & npm install & npm run dev
 
-    git clone https://github.com/tBrause/npm-express-sass-livereload.git .; git remote remove origin; npm install; npm run dev
+    git clone https://github.com/tBrause/npm-express-pug-examples .; git remote remove origin; npm install; npm run dev
 
 > \_Erfolgreich getestet: 15.09.2023
 
@@ -22,7 +22,7 @@
 
 > CMD: git clone & remote remove origin
 
-    git clone https://github.com/tBrause/npm-vite-react-sass.git .; git remote remove origin;
+    git clone https://github.com/tBrause/npm-express-pug-examples .; git remote remove origin;
 
 > CMD: npm install
 

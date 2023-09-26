@@ -2,4 +2,77 @@ extends layout
 
 block content
   h1= title
-  h3= description
+
+  //- Conditionals
+  h2 if / else if / else
+
+  //- Pug Code
+  h3 Pug Code
+  pre
+    code
+      | - const user = {description: 'Content for description'}
+      | - const authorised = false
+      | div#user
+      |   if user.description
+      |     h3.green Description
+      |     p.description= user.description
+      |   else if authorised
+      |     h3.blue Description
+      |     p.description.
+      |       User has no description,
+      |       why not add one...
+      |   else
+      |     h3.red Description
+      |     p.description User has no description
+  
+  //- HTML output
+  h3 HTML output
+
+  pre
+    code
+      | &lt;div id="user"&gt;
+      |   &lt;h3 class="green"&gt;Description&lt;/h3&gt;
+      |   &lt;p class="description"&gt;Content for description&lt;/p&gt;
+      | &lt;/div&gt;
+  
+  //- Check the HTML output in the browser
+  - const user = {description: 'Content for description'}
+  - const authorised = false
+  div#user
+    if user.description
+      h3.green Description
+      p.description= user.description
+    else if authorised
+      h3.blue Description
+      p.description.
+        User has no description,
+        why not add one...
+    else
+      h3.red Description
+      p.description User has no description
+
+  //- unless
+  h2 unless
+
+  //- Pug Code
+  h3 Pug Code
+
+  pre
+    code
+      | - const userLog = {isAnonymous: false, name: 'John'}
+      | unless userLog.isAnonymous
+      |   h4 with unless
+      |   p You're logged in as \#{userLog.name}
+  
+  //- HTML output
+  h3 HTML output
+
+  pre
+    code
+      | &lt;h4&gt;with unless&lt;/h4&gt;
+      | &lt;p&gt;You're logged in as John&lt;/p&gt;
+
+  - const userLog = {isAnonymous: false, name: 'John'}
+  unless userLog.isAnonymous
+    h4 with unless
+    p You're logged in as #{userLog.name}

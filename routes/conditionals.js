@@ -8,8 +8,7 @@ const router = express.Router();
 router.get('/', function (req, res, next) {
   // Render the index page
   res.render('conditionals', {
-    title: 'Express',
-    description: 'Express JS with template engine Pug',
+    title: 'Examples of using Conditionals with Pug',
   });
 });
 
